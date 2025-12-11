@@ -2,6 +2,7 @@ package com.example;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MainController {
@@ -12,7 +13,7 @@ public class MainController {
     @FXML
     private Button plus, minus, kakeru, walu;
     @FXML
-    private TextField Text_Answer;
+    private Label Text_Answer;
 
     @FXML
     private void onPlusClicked() {
