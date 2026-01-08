@@ -16,7 +16,7 @@ public class MainController {
     @FXML
     private Label Text_Answer;
     @FXML
-    private Button BMI;
+    private Button bmi;
     @FXML
     private Button triangle;
     @FXML
@@ -55,6 +55,13 @@ public class MainController {
         calculateTriangle();
     }
 
+    @FXML
+    private void onBMIClicked() {
+        lavel1.setText("体重(kg)");
+        lavel2.setText("身長(m)");
+        calculateBMI();
+    }
+
     private void resetLabels() {
         lavel1.setText("1");
         lavel2.setText("2");
@@ -86,6 +93,42 @@ public class MainController {
                 // 小数の場合（小数点以下2桁まで）
                 Text_Answer.setText(String.format("%.2f", area));
             }
+
+            // 計算実行後、入力フィールドをクリア
+            Text2.clear();
+            text1.clear();
+
+        } catch (NumberFormatException e) {
+            Text_Answer.setText("数値を入力してください");
+        }
+    }
+
+    private void calculateBMI() {
+        // BMI計算ロジックをここに実装
+        try {
+            // 入力値を取得
+            String input1 = Text2.getText().trim();
+            String input2 = text1.getText().trim();
+
+            // 入力値の確認
+            if (input1.isEmpty() || input2.isEmpty()) {
+                Text_Answer.setText("値を入力してください");
+                return;
+            }
+
+            double weight = Double.parseDouble(input1); // 体重(kg)
+            double height = Double.parseDouble(input2); // 身長(m)
+
+            if (height <= 0) {
+                Text_Answer.setText("身長は正の数でなければなりません");
+                return;
+            }
+
+            // BMI = 体重(kg) / (身長(m) * 身長(m))
+            double bmi = weight / (height * height);
+
+            // 結果を見やすく表示（小数点以下2桁まで）
+            Text_Answer.setText(String.format("%.2f", bmi));
 
             // 計算実行後、入力フィールドをクリア
             Text2.clear();
