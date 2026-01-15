@@ -23,6 +23,8 @@ public class MainController {
     private Label lavel1;
     @FXML
     private Label lavel2;
+    @FXML
+    private Button circle;
 
     @FXML
     private void onPlusClicked() {
@@ -65,6 +67,13 @@ public class MainController {
     private void resetLabels() {
         lavel1.setText("1");
         lavel2.setText("2");
+    }
+
+    @FXML
+    private void onCircleClicked() {
+        lavel1.setText("半径");
+        lavel2.setText("半径");
+        calculateCricle();
     }
 
     private void calculateTriangle() {
@@ -129,6 +138,39 @@ public class MainController {
 
             // 結果を見やすく表示（小数点以下2桁まで）
             Text_Answer.setText(String.format("%.2f", bmi));
+
+            // 計算実行後、入力フィールドをクリア
+            Text2.clear();
+            text1.clear();
+
+        } catch (NumberFormatException e) {
+            Text_Answer.setText("数値を入力してください");
+        }
+    }
+
+    private void calculateCricle() {
+        try {
+            // 入力値を取得（テキストフィールド1の値を使用）
+            String input1 = text1.getText().trim();
+
+            // 入力値の確認
+            if (input1.isEmpty()) {
+                Text_Answer.setText("値を入力してください");
+                return;
+            }
+
+            double radius = Double.parseDouble(input1);
+
+            if (radius <= 0) {
+                Text_Answer.setText("半径は正の数でなければなりません");
+                return;
+            }
+
+            // 円の面積 = 半径 × 半径 × π
+            double area = radius * radius * Math.PI;
+
+            // 結果を見やすく表示（小数点以下2桁まで）
+            Text_Answer.setText(String.format("%.2f", area));
 
             // 計算実行後、入力フィールドをクリア
             Text2.clear();
