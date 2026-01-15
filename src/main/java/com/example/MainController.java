@@ -1,9 +1,12 @@
 package com.example;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class MainController {
 
@@ -25,6 +28,8 @@ public class MainController {
     private Label lavel2;
     @FXML
     private Button circle;
+    @FXML
+    private Button calculator;
 
     @FXML
     private void onPlusClicked() {
@@ -92,6 +97,23 @@ public class MainController {
         lavel2.setText("時間");
         addSpeedStyle();
         calculateSpeed();
+    }
+
+    @FXML
+    private void onCalculatorClicked() {
+        try {
+            FXMLLoader loader = new FXMLLoader(MainController.class.getResource("calc.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            Stage stage = new Stage();
+            stage.setTitle("Calculator");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            Text_Answer.setText("エラー");
+            System.err.println("FXMLロードエラー: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private void removeSpeedStyle() {

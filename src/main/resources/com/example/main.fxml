@@ -31,5 +31,6 @@
       <Button fx:id="speed" layoutX="320.0" layoutY="291.0" mnemonicParsing="false" onAction="#onSpeedClicked" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 12;" text="speed" />
       <Label fx:id="lavel1" layoutX="162.0" layoutY="131.0" text="1" />
       <Label fx:id="lavel2" layoutX="325.0" layoutY="131.0" text="2" />
+      <Button fx:id="calculator" layoutX="537.0" layoutY="407.0" mnemonicParsing="false" onAction="#onCalculatorClicked" style="-fx-background-color: orange;" text="calculator" textFill="#f8f8f8" />
    </children>
 </AnchorPane>
