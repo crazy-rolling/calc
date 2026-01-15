@@ -28,30 +28,35 @@ public class MainController {
 
     @FXML
     private void onPlusClicked() {
+        removeSpeedStyle();
         resetLabels();
         calculate('+');
     }
 
     @FXML
     private void onMinusClicked() {
+        removeSpeedStyle();
         resetLabels();
         calculate('-');
     }
 
     @FXML
     private void onKakeruClicked() {
+        removeSpeedStyle();
         resetLabels();
         calculate('*');
     }
 
     @FXML
     private void onWaluClicked() {
+        removeSpeedStyle();
         resetLabels();
         calculate('/');
     }
 
     @FXML
     private void onTriangleClicked() {
+        removeSpeedStyle();
         lavel1.setText("底辺");
         lavel2.setText("高さ");
         calculateTriangle();
@@ -59,6 +64,7 @@ public class MainController {
 
     @FXML
     private void onBMIClicked() {
+        removeSpeedStyle();
         lavel1.setText("体重(kg)");
         lavel2.setText("身長(m)");
         calculateBMI();
@@ -71,9 +77,70 @@ public class MainController {
 
     @FXML
     private void onCircleClicked() {
+        removeSpeedStyle();
         lavel1.setText("半径");
         lavel2.setText("半径");
         calculateCricle();
+    }
+
+    @FXML
+    private Button speed;
+
+    @FXML
+    private void onSpeedClicked() {
+        lavel1.setText("距離");
+        lavel2.setText("時間");
+        addSpeedStyle();
+        calculateSpeed();
+    }
+
+    private void removeSpeedStyle() {
+        text1.setStyle("");
+        Text2.setStyle("");
+    }
+
+    private void addSpeedStyle() {
+        text1.setStyle("-fx-border-color: #FF6B6B; -fx-border-width: 2; -fx-border-radius: 5;");
+        Text2.setStyle("-fx-border-color: #FF6B6B; -fx-border-width: 2; -fx-border-radius: 5;");
+    }
+
+    private void calculateSpeed() {
+        try {
+            // 入力値を取得
+            String input1 = Text2.getText().trim();
+            String input2 = text1.getText().trim();
+
+            // 入力値の確認
+            if (input1.isEmpty() || input2.isEmpty()) {
+                Text_Answer.setText("値を入力してください");
+                Text2.clear();
+                text1.clear();
+                return;
+            }
+
+            double distance = Double.parseDouble(input1); // 距離
+            double time = Double.parseDouble(input2); // 時間
+
+            if (time <= 0) {
+                Text_Answer.setText("時間は正の数でなければなりません");
+                return;
+            }
+
+            // 速度 = 距離 / 時間
+            double speed = distance / time;
+
+            // 結果を見やすく表示（小数点以下2桁まで）
+            Text_Answer.setText(String.format("%.2f", speed));
+
+            // 計算実行後、入力フィールドをクリア
+            Text2.clear();
+            text1.clear();
+
+        } catch (NumberFormatException e) {
+            Text_Answer.setText("数値を入力してください");
+            Text2.clear();
+            text1.clear();
+        }
     }
 
     private void calculateTriangle() {
@@ -85,6 +152,8 @@ public class MainController {
             // 入力値の確認
             if (input1.isEmpty() || input2.isEmpty()) {
                 Text_Answer.setText("値を入力してください");
+                Text2.clear();
+                text1.clear();
                 return;
             }
 
@@ -109,6 +178,8 @@ public class MainController {
 
         } catch (NumberFormatException e) {
             Text_Answer.setText("数値を入力してください");
+            Text2.clear();
+            text1.clear();
         }
     }
 
@@ -122,6 +193,8 @@ public class MainController {
             // 入力値の確認
             if (input1.isEmpty() || input2.isEmpty()) {
                 Text_Answer.setText("値を入力してください");
+                Text2.clear();
+                text1.clear();
                 return;
             }
 
@@ -145,6 +218,8 @@ public class MainController {
 
         } catch (NumberFormatException e) {
             Text_Answer.setText("数値を入力してください");
+            Text2.clear();
+            text1.clear();
         }
     }
 
@@ -156,6 +231,8 @@ public class MainController {
             // 入力値の確認
             if (input1.isEmpty()) {
                 Text_Answer.setText("値を入力してください");
+                Text2.clear();
+                text1.clear();
                 return;
             }
 
@@ -178,6 +255,8 @@ public class MainController {
 
         } catch (NumberFormatException e) {
             Text_Answer.setText("数値を入力してください");
+            Text2.clear();
+            text1.clear();
         }
     }
 
@@ -190,6 +269,8 @@ public class MainController {
             // 入力値の確認
             if (input1.isEmpty() || input2.isEmpty()) {
                 Text_Answer.setText("値を入力してください");
+                Text2.clear();
+                text1.clear();
                 return;
             }
 
@@ -236,6 +317,8 @@ public class MainController {
 
         } catch (NumberFormatException e) {
             Text_Answer.setText("数値を入力してください");
+            Text2.clear();
+            text1.clear();
         }
     }
 }
