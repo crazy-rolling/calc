@@ -8,10 +8,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
    <children>
-      <Button fx:id="plus" layoutX="58.0" layoutY="101.0" mnemonicParsing="false" onAction="#onPlusClicked" text="  ＋  " />
-      <Button fx:id="minus" layoutX="58.0" layoutY="127.0" mnemonicParsing="false" onAction="#onMinusClicked" text="  －  " />
-      <Button fx:id="kakeru" layoutX="58.0" layoutY="153.0" mnemonicParsing="false" onAction="#onKakeruClicked" text="   ×  " />
-      <Button fx:id="walu" layoutX="58.0" layoutY="178.0" mnemonicParsing="false" onAction="#onWaluClicked" text="   ÷  " />
+      <Button fx:id="plus" layoutX="58.0" layoutY="86.0" mnemonicParsing="false" onAction="#onPlusClicked" style="-fx-background-color: #00CED1; -fx-text-fill: white; -fx-font-size: 14;" text="  ＋  " />
+      <Button fx:id="minus" layoutX="58.0" layoutY="125.0" mnemonicParsing="false" onAction="#onMinusClicked" style="-fx-background-color: #00CED1; -fx-text-fill: white; -fx-font-size: 14;" text="  －  " />
+      <Button fx:id="kakeru" layoutX="58.0" layoutY="166.0" mnemonicParsing="false" onAction="#onKakeruClicked" style="-fx-background-color: #00CED1; -fx-text-fill: white; -fx-font-size: 14;" text="   ×  " />
+      <Button fx:id="walu" layoutX="58.0" layoutY="204.0" mnemonicParsing="false" onAction="#onWaluClicked" style="-fx-background-color: #00CED1; -fx-text-fill: white; -fx-font-size: 14;" text="   ÷  " />
       <Label layoutX="215.0" layoutY="58.0" prefHeight="55.0" prefWidth="167.0" text="自動計算器" wrapText="true">
          <font>
             <Font size="32.0" />
@@ -25,10 +25,10 @@
                <Font size="14.0" />
             </font>
          </Label>
-      <Button fx:id="triangle" layoutX="129.0" layoutY="291.0" mnemonicParsing="false" onAction="#onTriangleClicked" text="triangle " />
-      <Button fx:id="BMI" layoutX="189.0" layoutY="291.0" mnemonicParsing="false" onAction="#onBMIClicked" prefHeight="25.0" prefWidth="63.0" text="BMI" textAlignment="CENTER" />
-      <Button fx:id="circle" layoutX="252.0" layoutY="291.0" mnemonicParsing="false" onAction="#onCircleClicked" prefHeight="25.0" prefWidth="63.0" text="circle" />
-      <Button fx:id="speed" layoutX="315.0" layoutY="291.0" mnemonicParsing="false" onAction="#onSpeedClicked" prefHeight="25.0" prefWidth="63.0" text="speed" />
+      <Button fx:id="triangle" layoutX="117.0" layoutY="291.0" mnemonicParsing="false" onAction="#onTriangleClicked" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 12;" text="triangle " />
+      <Button fx:id="BMI" layoutX="183.0" layoutY="291.0" mnemonicParsing="false" onAction="#onBMIClicked" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 12;" text="BMI" textAlignment="CENTER" />
+      <Button fx:id="circle" layoutX="252.0" layoutY="291.0" mnemonicParsing="false" onAction="#onCircleClicked" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 12;" text="circle" />
+      <Button fx:id="speed" layoutX="320.0" layoutY="291.0" mnemonicParsing="false" onAction="#onSpeedClicked" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 12;" text="speed" />
       <Label fx:id="lavel1" layoutX="162.0" layoutY="131.0" text="1" />
       <Label fx:id="lavel2" layoutX="325.0" layoutY="131.0" text="2" />
    </children>
